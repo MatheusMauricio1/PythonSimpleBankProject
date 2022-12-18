@@ -71,12 +71,12 @@ class Account:
                 self.limit = self.limit + rest
                 self.balance = 0
                 self.total_balance = self.calculate_total_balance
-                print('Withdraw has been realized successfully')
+            print('Withdraw has been realized successfully')
         else:
             print('The money could not be withdrawn. Please try again.')
 
     def transfer(self: object, destiny_account: object, value: float) -> None:
-        if value == 0 and self.total_balance >= value:
+        if value > 0 and self.total_balance >= value:
             if self.balance >= value:
                 self.balance = self.balance - value
                 self.total_balance = self.calculate_total_balance
@@ -89,7 +89,7 @@ class Account:
                 self.total_balance = self.calculate_total_balance
                 destiny_account.balance = destiny_account.balance + value
                 destiny_account.total_balance = destiny_account.calculate_total_balance
-                print('The transference has been done successfully!')
+            print('The transference has been done successfully!')
         else:
             print('The transference could not be done. Please, try again.\n')
 

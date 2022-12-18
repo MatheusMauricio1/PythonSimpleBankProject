@@ -4,7 +4,7 @@ from models.client import Client
 from models.account import Account
 
 
-accounts: List = []
+accounts: List[Account] = []
 
 
 def main() -> None:
@@ -150,7 +150,7 @@ def transfer_money():
                 value: float = float(input("Please inform how much money do you want to transfer: "))
                 o_account.transfer(d_account, value)
             else:
-                print(f"The account {d_acc_number} that you've informed could not found")
+                print(f"The account {d_acc_number} that you've informed could not be found")
                 print("Please Try again.")
                 sleep(2)
                 menu()
